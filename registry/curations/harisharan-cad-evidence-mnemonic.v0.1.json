@@ -18,7 +18,7 @@
       "url": "https://github.com/FabinGurung/jp-drawing-coordination"
     },
     {
-      "label": "R5 engineering source reconciliation — unmerged review PR",
+      "label": "Harisharan R5 engineering reconciliation — reviewed PR #121",
       "url": "https://github.com/FabinGurung/jp-drawing-coordination/pull/121"
     }
   ],
@@ -43,6 +43,6 @@
   "limitations": [
     "A7 is a semantic reference wall, not an alternate bill-of-quantities database or engineering design authority.",
     "No restricted Drive links, private file IDs, contact data or engineering sign-off are published.",
-    "The R5 PR link is a review state, not proof that GitHub Pages has deployed or professional engineering approval occurred."
+    "The R5 PR link records GitHub source/review/merge provenance, not proof that GitHub Pages has deployed or professional engineering approval occurred."
   ]
 }
