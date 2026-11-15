@@ -1,21 +1,25 @@
 {
   "schema": "a7://public-memory-case/1",
   "id": "A7-MEM-CAD-HAR-20261110-001",
-  "revision": "R000001",
-  "observed_on": "2026-11-10",
+  "revision": "R000002",
+  "observed_on": "2026-11-15",
   "ownership": "A7_PUBLIC_CROSS_REFERENCE_ONLY",
-  "domainAuthority": "FabinGurung/JP_Computer-Aided-Drawings",
+  "domainAuthority": "FabinGurung/jp-drawing-coordination",
   "constructionApproval": false,
   "sourceApproval": false,
   "ownerDirectionStatus": "OWNER_INPUT_NOT_ISSUED_FOR_CONSTRUCTION",
   "sourceLinks": [
     {
       "label": "Harisharan source-linked member review",
-      "url": "https://fabingurung.github.io/JP_Computer-Aided-Drawings/projects/harisharan-adhikari/review/"
+      "url": "https://fabingurung.github.io/jp-drawing-coordination/projects/harisharan-adhikari/review/"
     },
     {
       "label": "Harisharan CAD repository",
-      "url": "https://github.com/FabinGurung/JP_Computer-Aided-Drawings"
+      "url": "https://github.com/FabinGurung/jp-drawing-coordination"
+    },
+    {
+      "label": "Harisharan R5 engineering reconciliation — reviewed PR #121",
+      "url": "https://github.com/FabinGurung/jp-drawing-coordination/pull/121"
     }
   ],
   "reminders": [
@@ -38,6 +42,7 @@
   "versionRule": "Original Drive source IDs do not change. Archive PRE before edits; edit live IDs; verify POST and Git PR; preserve release tags. A7 links but never duplicates owner CAD engineering data.",
   "limitations": [
     "A7 is a semantic reference wall, not an alternate bill-of-quantities database or engineering design authority.",
-    "No restricted Drive links, private file IDs, contact data or engineering sign-off are published."
+    "No restricted Drive links, private file IDs, contact data or engineering sign-off are published.",
+    "The R5 PR link records GitHub source/review/merge provenance, not proof that GitHub Pages has deployed or professional engineering approval occurred."
   ]
 }
