@@ -64,8 +64,8 @@ assert html.count('id="pinned-34-source-sheets"')==1
 assert pin["tracking_issue"] in html
 assert len(pin["related_owners"])==1 and pin["related_owners"][0]["repository"]=="FabinGurung/jp-estimating-and-boq"
 assert pin["related_owners"][0]["source_memory_wall"] in html
-assert pin["related_owners"][0]["status"]=="MANUAL_FIRST_4_AUTHENTICATED_1_OPTIONAL_VENDOR_BILLS_2_REFERENCES_V000004"
-assert "7 Sheet roles &middot; 4 authenticated, 1 optional Vendor Bills, 2 references" in html
+assert pin["related_owners"][0]["status"]=="MANUAL_FIRST_4_AUTHENTICATED_2_OPTIONAL_VENDOR_CONTRACTOR_2_REFERENCES_V000007"
+assert "8 Sheet roles &middot; 4 authenticated, 2 optional Vendor/Contractor, 2 references" in html
 assert "1_MYCZ98tsfmWgTn_-jQBU9OcdrygwC9nlE9BF1gWK2k" not in pinned_text
 assert html.index('id="pinned-34-source-sheets"')<html.index('class="notice-board"')
 
