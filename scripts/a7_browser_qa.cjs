@@ -28,10 +28,24 @@ async function inspect(page,kind){
   await page.locator("#arc04RouteList .arc04-item").first().click();
   await page.locator('#arc04Inspect a[href*="/registry/edges/edges.jsonl#L"]').waitFor();
   pass(kind+": link to immutable canonical source evidence");
-  await page.locator('.star-node[data-repo-id="REPO-000010"]').click();
-  assert.equal(await page.locator("#selectedSite").getAttribute("href"),null,"Unverified Pages URL cannot be clickable");
-  assert.match(await page.locator("#inspectorDeployedSha").textContent(),/Not verified/,"Never show invented publication");
-  pass(kind+": new public repository indexed without Pages claim");
+  const canonical = [
+    ["REPO-000001","jp-a7-system-registry"],["REPO-000002","jp-structural-analysis"],
+    ["REPO-000003","jp-drawing-coordination"],["REPO-000004","jp-scheduling-resources-management"],
+    ["REPO-000005","data-warehouse-random"],["REPO-000006","jp-research-lab"],
+    ["REPO-000007","jp-site-operations"],["REPO-000008","jp-estimating-and-boq"],
+    ["REPO-000009","jp-study-hub"],["REPO-000010","jp-field-desk-library"]
+  ];
+  for (const [id,slug] of canonical) {
+    await page.locator('.star-node[data-repo-id="'+id+'"]').click();
+    assert.equal(await page.locator("#selectedRepo").getAttribute("href"),
+      "https://github.com/FabinGurung/"+slug, "Canonical repository link "+id);
+    if (id!=="REPO-000001")
+      assert.equal(await page.locator("#selectedSite").getAttribute("href"),
+        "https://fabingurung.github.io/"+slug+"/", "Canonical Pages destination "+id);
+  }
+  assert.equal(await page.locator("#inspectorDeployedSha").textContent(),"f88bcfd903f","Resource Library verified deployed SHA");
+  assert.ok((await page.locator('#inspectorProviderLinks a[href*="43987395477"]').count())>=1,"Resource Library publishing evidence");
+  pass(kind+": ten canonical repositories and nine external Pages link destinations");
   await page.locator('.star-node[data-repo-id="REPO-000003"]').click();
   await page.locator("#arc04IncludeProposals").check();
   await page.waitForFunction(()=>document.querySelector("#arc04Count")?.textContent.includes("3 proposals shown"));
