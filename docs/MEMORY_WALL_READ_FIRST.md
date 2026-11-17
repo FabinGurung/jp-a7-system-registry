@@ -153,3 +153,13 @@ Scheduling authority stays with `FabinGurung/jp-scheduling-resources-management`
 Version source: `v1.16.0-skyforge-standard-schedule-template.1`, kernel SHA `4fda4ca981b381091d345e60d03a3bd467c4fdf8`. Date of the verified Skyforge release: 2026-11-14. Treat this as a *recorded pinned release*: future projects must check the current verified engine before execution; no automatic upgrades are implied. Source record is public-safe, with no private Google Drive IDs, site documents or engineering signoffs.
 
 A7 updated only its own memory curation, website header and guide. Historical seven chapters and the deferred 34-Sheet pin are preserved unchanged.
+
+## Skyforge four-view current UI and A7 sequence-scope reconciliation · 2026-11-17
+
+Keep the v1.16 Standard Project Schedule Input Template and the v1.18 Four-View Scheduling Desk as distinct versioned surfaces. The same LIVE A7 pointer is `registry/curations/scheduling-template-adoption.v0.1.json`, stable `A7-MEM-SCHED-TEMPLATE-ADOPTION-010`. The 000002_PRE/POST archives preserve the source before and after this update; no new replacement document ID was created.
+
+The shared v1.18 desk includes Gantt, Calendar, Activity Packages and Working Drawings. Narayani's 45-activity pilot remains the default on the project entry; v002 is accessible only from inside the desk. East inspects clicked dates, activities, package snapshots and schema-validated public CAD source registers. Source-drawing-to-activity crosswalks remain unresolved until CAD publishes reviewed evidence. A successful Pages deployment is not a construction release.
+
+**A7 sequence semantics:** `A7_BOOTSTRAP.json.current_sequence` is `A7-SEQ-000047` in the recorded formally closed bootstrap. Separate archived rename activity under `A7-SEQ-000048` and the cross-product Memory Wall scheduling pointer under `A7-SEQ-000049` do not themselves authorize changing the bootstrap's `FINAL_CLOSED_PASS` or claiming other A7 provider parity completed. Do not define the global current sequence as the numerical maximum among heterogeneous event records. This resolves the ambiguous wording without overwriting the canonical bootstrap source or inventing a formal closeout.
+
+Verified Skyforge v1.18 evidence: kernel #44002640166, authenticated Pages #44002155602, real browser/CAD readback #44002313866, release #44002881828. Source-only project records remain separate; Field & Desk's navigation served as a UI reference and was not ingested.
