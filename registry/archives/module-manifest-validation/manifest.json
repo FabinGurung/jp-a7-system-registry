@@ -8,10 +8,10 @@
     "docs/ROADMAP.md"
   ],
   "central_archive_dir": "registry/archives/module-manifest-validation/",
-  "archive_ordinal": "000003",
-  "pre_path": "registry/archives/module-manifest-validation/000003_PRE_A7_SEQ_000048.py",
-  "post_path": "registry/archives/module-manifest-validation/000003_POST_A7_SEQ_000048.py",
-  "status": "POST_CAPTURED_FOR_RENAME_CI_REVIEW",
+  "archive_ordinal": "000004",
+  "pre_path": "registry/archives/module-manifest-validation/000004_PRE_A7_LINK_REPAIR_20261117.py",
+  "post_path": "registry/archives/module-manifest-validation/000004_POST_A7_LINK_REPAIR_20261117.py",
+  "status": "POST_CAPTURED_FOR_CURRENT_CANONICAL_LINK_REPAIR_QA",
   "history": "registry/archives/module-manifest-validation/version-history.jsonl",
   "restore": "Restore archived source contents to the SAME paths via governed PR; rerun configured Actions",
   "private_drive_writes": false,
@@ -25,5 +25,13 @@
   "latest_source_path": "scripts/validate_module_manifests.py",
   "original_live_paths": [
     "scripts/validate_module_manifests.py"
-  ]
+  ],
+  "historical_000003": {
+    "pre_path": "registry/archives/module-manifest-validation/000003_PRE_A7_SEQ_000048.py",
+    "post_path": "registry/archives/module-manifest-validation/000003_POST_A7_SEQ_000048.py",
+    "status": "POST_CAPTURED_FOR_RENAME_CI_REVIEW"
+  },
+  "last_verified_current_slug_observation": "registry/providers/canonical-owner-repository-links-20261117.json",
+  "original_main_blob_sha": "66aa80c693ec37d07310559b58efb03a279061ed",
+  "current_post_git_blob_sha": "6660b71e0e8ad7ffa9dff852f949c400ced6aeca"
 }
