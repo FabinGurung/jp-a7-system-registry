@@ -73,8 +73,8 @@
       "zone": "ADJACENT",
       "azimuth": 345,
       "radial": 48,
-      "summary": "A separate studio business and public website prototype; indexed, not governed as an AEC engine.",
-      "owns": "Studio website and member/schedule product logic"
+      "summary": "Pilates Studio website prototype retained under the renamed data-warehouse-random GitHub repository (provider ID 1309466765). The slug is not a separate business identity.",
+      "owns": "Historical Pilates prototype website/code, as shown by the repository's files and description"
     },
     {
       "id": "REPO-000006",
@@ -128,10 +128,10 @@
       "zone": "OPERATIONS",
       "azimuth": 129,
       "radial": 53,
-      "summary": "Independent human-first resource library. Historical import/Pages verification remain separately gated.",
+      "summary": "Human-first resource library with source-backed GitHub Pages deployment verified 17 November 2026; source and financial approvals remain separate.",
       "owns": "Its resource-library code and migration workflow",
       "does_not_own": "Operations facts, original Drive sources, specialist approvals or A7 policies"
     }
   ],
-  "fact_scope_note": "Provider/release statuses are recorded observations and may be stale; each owning repo and live provider is authoritative for current work. Newly discovered public repositories may have no verified Pages destination."
+  "fact_scope_note": "Provider/release statuses are recorded observations and may be stale; each owning repo and live provider is authoritative for current work. Newly discovered public repositories may have no verified Pages destination. The current 17 November repository name/Pages homepage crosswalk uses immutable GitHub provider IDs; publication-workflow evidence does not imply domain approval."
 }
