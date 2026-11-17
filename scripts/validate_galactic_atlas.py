@@ -22,11 +22,10 @@ assert all(e["authority_transfer"] is False for e in d["links"])
 assert all(e["to"] in shown_ids and e["to"] != "REPO-000001" for e in d["links"])
 assert all(s["github_url"] == "https://github.com/" + s["module_repository"]
            for s in d["stations"])
-assert all(s["website_url"].startswith("https://fabingurung.github.io/") if s["id"]!="REPO-000010" else s["website_url"] is None
-           for s in d["stations"])
-assert all(s["source_observed_at"] for s in d["stations"])
+assert all(s["website_url"] == "https://fabingurung.github.io/" + s["module_repository"].split("/",1)[1] + "/" for s in d["stations"])
+assert all(s["source_observed_at"] == "2026-11-17" for s in d["stations"])
 aad = next(s for s in d["stations"] if s["id"] == "REPO-000003")
-assert aad["module_repository"] == "FabinGurung/JP_Computer-Aided-Drawings"
+assert aad["module_repository"] == "FabinGurung/jp-drawing-coordination"
 assert any("governance/aad/aad-domain-template" in l["url"] for l in aad["deep_links"])
 assert all(s["id"] == "REPO-000001" or "owns" in s for s in d["stations"])
 assert "catalogue" in d["catalogue_role"].lower()
