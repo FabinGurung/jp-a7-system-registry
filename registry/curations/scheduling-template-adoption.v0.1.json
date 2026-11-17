@@ -27,5 +27,23 @@
   "domain_authority": false,
   "no_duplicate_template": true,
   "release_approval_implied": false,
-  "source_revision": "Skyforge v1.16.0-skyforge-standard-schedule-template.1"
+  "source_revision": "Skyforge v1.16.0-skyforge-standard-schedule-template.1",
+  "current_ui_release": "https://github.com/FabinGurung/jp-scheduling-resources-management/releases/tag/v1.18.0-skyforge-four-views.1",
+  "current_ui_revision": "v1.18.0-skyforge-four-views.1",
+  "current_ui_source_sha": "73a3d86a1bfb11d4cdedaa170980addfe2dfdeb0",
+  "current_ui_modes": [
+    "activities",
+    "calendar",
+    "packages",
+    "drawings"
+  ],
+  "current_ui_evidence": {
+    "kernel_run": 44002640166,
+    "pages_run": 44002155602,
+    "browser_run": 44002313866,
+    "release_run": 44002881828
+  },
+  "current_ui_working_url": "https://fabingurung.github.io/jp-scheduling-resources-management/projects/narayani/desk.html",
+  "adoption_boundary": "Keep v1.16 source-input template; v1.18 is four-view renderer. Narayani pilot default, v002 only in desk dropdown; East follows activity/date/package/CAD clicks. Project source data and construction approvals unchanged.",
+  "no_direct_cad_activity_join": true
 }
