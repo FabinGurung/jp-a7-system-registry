@@ -43,7 +43,7 @@ async function inspect(page,kind){
       assert.equal(await page.locator("#selectedSite").getAttribute("href"),
         "https://fabingurung.github.io/"+slug+"/", "Canonical Pages destination "+id);
   }
-  assert.equal(await page.locator("#inspectorDeployedSha").textContent(),"f88bcfd903f","Resource Library verified deployed SHA");
+  assert.equal(await page.locator("#inspectorDeployedSha").textContent(),"f88bcfd903f4","Resource Library verified deployed SHA");
   assert.ok((await page.locator('#inspectorProviderLinks a[href*="43987395477"]').count())>=1,"Resource Library publishing evidence");
   pass(kind+": ten canonical repositories and nine external Pages link destinations");
   await page.locator('.star-node[data-repo-id="REPO-000003"]').click();
