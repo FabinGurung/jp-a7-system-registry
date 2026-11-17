@@ -85,6 +85,8 @@ for r in recs:
     effective[mid]={"blob":r.get("current_manifest_blob_sha"),"commit":r.get("current_observed_commit_sha"),
                     "repo_name":r.get("repository_full_name")}
 
+current_links=load("registry/providers/canonical-owner-repository-links-20261117.json")
+current_by={x["repository_id"]:x for x in current_links.get("links",[])}
 for mid,m in mod_by.items():
     ptr=m.get("a7_module_manifest",{})
     if ptr.get("path")!="A7_MODULE.json": errors.append(f"{mid}: missing canonical manifest pointer")
@@ -93,7 +95,14 @@ for mid,m in mod_by.items():
     eff=effective.get(mid)
     if not eff: errors.append(f"{mid}: no effective manifest state"); continue
     if m.get("repository_full_name")!=eff.get("repo_name"):
-        errors.append(f"{mid}: current repository slug differs from the reconciled provider name")
+        # Current link routing follows stable immutable GitHub provider identity;
+        # older attested manifest/blob observations remain unchanged as-of records.
+        now=current_by.get(m["repository_id"])
+        if not (now and str(now.get("provider_object_id"))==str(m["provider_repository_id"])
+                and now.get("repository_full_name")==m["repository_full_name"]
+                and now.get("previous_slug_in_historical_atlas")==eff["repo_name"].split("/",1)[-1]
+                and current_links.get("observed_date")=="2026-11-17"):
+            errors.append(f"{mid}: current repository slug differs from the reconciled provider name")
     if ptr.get("provider_blob_sha")!=eff["blob"]: errors.append(f"{mid}: current manifest blob mismatch")
     if ptr.get("observed_commit_sha")!=eff["commit"]: errors.append(f"{mid}: current manifest observed commit mismatch")
 
