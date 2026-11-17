@@ -2,9 +2,9 @@
   "schema": "jp-source-archive-manifest/1",
   "subject_id": "A7-MEM-SCHED-TEMPLATE-ADOPTION-010",
   "source": "registry/curations/scheduling-template-adoption.v0.1.json",
-  "ordinal": "000001",
-  "pre_path": "registry/archives/scheduling-template-adoption/000001_PRE_A7_SEQ_000049.json",
-  "post_path": "registry/archives/scheduling-template-adoption/000001_POST_A7_SEQ_000049.json",
+  "ordinal": "000002",
+  "pre_path": "registry/archives/scheduling-template-adoption/000002_PRE_A7_SEQ_000049.json",
+  "post_path": "registry/archives/scheduling-template-adoption/000002_POST_A7_SEQ_000049.json",
   "record_type": "NEW_PUBLIC_SAFE_ROUTING_POINTER_NOT_EXISTING_LIVE_FILE_REPLACEMENT",
   "pre_main_commit": "e7ff05665e0fc142328807f3a6b005219cb754a2",
   "post_source_commit": "ffa8eed4ebac61fd62fd0664129e8cb431630d07",
@@ -15,5 +15,20 @@
   "scope": "A7 navigation header, curated pointer and governing read-first documentation only",
   "not_domain_authority": true,
   "preserve_owner_version": "Skyforge v1.16.0-skyforge-standard-schedule-template.1",
-  "status": "POST_SOURCE_CAPTURED__REGISTRY_DEPLOYMENT_AND_BROWSER_PASSED"
+  "status": "POST_000002_CAPTURED__PAGES_AND_LIVE_CAD_QA_PASSED__A7_CI_PENDING",
+  "prior_000001": {
+    "pre": "registry/archives/scheduling-template-adoption/000001_PRE_A7_SEQ_000049.json",
+    "post": "registry/archives/scheduling-template-adoption/000001_POST_A7_SEQ_000049.json",
+    "status": "POST_SOURCE_CAPTURED__REGISTRY_DEPLOYMENT_AND_BROWSER_PASSED"
+  },
+  "current_template_release": "v1.16.0-skyforge-standard-schedule-template.1",
+  "current_ui_release": "v1.18.0-skyforge-four-views.1",
+  "ui_source_commit": "73a3d86a1bfb11d4cdedaa170980addfe2dfdeb0",
+  "proven_qas": {
+    "kernel": 44002640166,
+    "pages": 44002155602,
+    "browser": 44002313866,
+    "release": 44002881828
+  },
+  "bootstrap_sequence_clarification": "A7_BOOTSTRAP last formal closeout 000047; independent rename/archive 000048 and scheduling pointer 000049 are not interchangeable bootstrap states"
 }
