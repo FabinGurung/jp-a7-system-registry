@@ -18,7 +18,10 @@
         }
       ],
       "observed_at": "2026-10-06T07:50:00Z",
-      "binding_verified_at": "2026-10-06T11:02:44Z"
+      "binding_verified_at": "2026-10-06T11:02:44Z",
+      "current_repository_full_name": "FabinGurung/jp-a7-system-registry",
+      "current_repository_observed_date": "2026-11-17",
+      "historical_name_evidence_preserved": true
     },
     {
       "role_candidate_id": "RROLE-000002",
@@ -33,7 +36,10 @@
         }
       ],
       "observed_at": "2026-10-06T07:50:00Z",
-      "binding_verified_at": "2026-10-06T11:02:44Z"
+      "binding_verified_at": "2026-10-06T11:02:44Z",
+      "current_repository_full_name": "FabinGurung/jp-structural-analysis",
+      "current_repository_observed_date": "2026-11-17",
+      "historical_name_evidence_preserved": true
     },
     {
       "role_candidate_id": "RROLE-000003",
@@ -48,7 +54,10 @@
         }
       ],
       "observed_at": "2026-10-06T07:50:00Z",
-      "binding_verified_at": "2026-10-06T11:02:44Z"
+      "binding_verified_at": "2026-10-06T11:02:44Z",
+      "current_repository_full_name": "FabinGurung/jp-drawing-coordination",
+      "current_repository_observed_date": "2026-11-17",
+      "historical_name_evidence_preserved": true
     },
     {
       "role_candidate_id": "RROLE-000004",
@@ -71,7 +80,10 @@
         }
       ],
       "observed_at": "2026-10-06T07:50:00Z",
-      "binding_verified_at": "2026-10-06T11:02:44Z"
+      "binding_verified_at": "2026-10-06T11:02:44Z",
+      "current_repository_full_name": "FabinGurung/jp-scheduling-resources-management",
+      "current_repository_observed_date": "2026-11-17",
+      "historical_name_evidence_preserved": true
     },
     {
       "role_candidate_id": "RROLE-000005",
@@ -90,7 +102,10 @@
         }
       ],
       "observed_at": "2026-10-06T07:50:00Z",
-      "binding_verified_at": "2026-10-06T11:02:44Z"
+      "binding_verified_at": "2026-10-06T11:02:44Z",
+      "current_repository_full_name": "FabinGurung/data-warehouse-random",
+      "current_repository_observed_date": "2026-11-17",
+      "historical_name_evidence_preserved": true
     },
     {
       "role_candidate_id": "RROLE-000006",
@@ -105,7 +120,10 @@
         }
       ],
       "observed_at": "2026-10-06T07:50:00Z",
-      "binding_verified_at": "2026-10-06T11:02:44Z"
+      "binding_verified_at": "2026-10-06T11:02:44Z",
+      "current_repository_full_name": "FabinGurung/jp-research-lab",
+      "current_repository_observed_date": "2026-11-17",
+      "historical_name_evidence_preserved": true
     },
     {
       "role_candidate_id": "RROLE-000007",
@@ -124,7 +142,10 @@
         }
       ],
       "observed_at": "2026-10-06T07:50:00Z",
-      "binding_verified_at": "2026-10-06T11:02:44Z"
+      "binding_verified_at": "2026-10-06T11:02:44Z",
+      "current_repository_full_name": "FabinGurung/jp-site-operations",
+      "current_repository_observed_date": "2026-11-17",
+      "historical_name_evidence_preserved": true
     },
     {
       "role_candidate_id": "RROLE-000008",
@@ -143,7 +164,10 @@
         }
       ],
       "observed_at": "2026-10-06T07:50:00Z",
-      "binding_verified_at": "2026-10-06T11:02:44Z"
+      "binding_verified_at": "2026-10-06T11:02:44Z",
+      "current_repository_full_name": "FabinGurung/jp-estimating-and-boq",
+      "current_repository_observed_date": "2026-11-17",
+      "historical_name_evidence_preserved": true
     },
     {
       "role_candidate_id": "RROLE-000009",
@@ -162,7 +186,10 @@
         }
       ],
       "observed_at": "2026-10-06T07:50:00Z",
-      "binding_verified_at": "2026-10-06T11:02:44Z"
+      "binding_verified_at": "2026-10-06T11:02:44Z",
+      "current_repository_full_name": "FabinGurung/jp-study-hub",
+      "current_repository_observed_date": "2026-11-17",
+      "historical_name_evidence_preserved": true
     },
     {
       "role_candidate_id": "RROLE-000010",
@@ -184,7 +211,10 @@
           "value": "Historical Git transfer plus safety tests, no Pages workflow"
         }
       ],
-      "observed_date": "2026-11-08"
+      "observed_date": "2026-11-08",
+      "current_repository_full_name": "FabinGurung/jp-field-desk-library",
+      "current_repository_observed_date": "2026-11-17",
+      "historical_name_evidence_preserved": true
     }
   ]
 }

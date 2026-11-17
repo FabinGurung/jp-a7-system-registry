@@ -42,7 +42,8 @@
         "last_reconciled_date": "2026-11-11"
       },
       "current_slug": "jp-site-operations",
-      "canonical_pages_workflow": ".github/workflows/operations-sheets-pages.yml"
+      "canonical_pages_workflow": ".github/workflows/operations-sheets-pages.yml",
+      "canonical_link_observed_date": "2026-11-17"
     },
     {
       "module_id": "MOD-SCHED-001",
@@ -53,7 +54,7 @@
       "platform_level": "PEER_SPECIALIST_MODULE",
       "repository_id": "REPO-000004",
       "provider_repository_id": "1307302088",
-      "repository_full_name": "FabinGurung/JP_Scheduling_Work_and_Resources_Management",
+      "repository_full_name": "FabinGurung/jp-scheduling-resources-management",
       "default_branch": "main",
       "canonical_working_ref": "kernel-v0.2-open-source-engines",
       "observed_ref_sha": "ae8209cdb965435617806e4eef05daeb92decc47",
@@ -68,7 +69,7 @@
         "README.md@kernel-v0.2-open-source-engines"
       ],
       "ownership_profile_id": "OWN-MOD-SCHED-001",
-      "public_site_url": "https://fabingurung.github.io/JP_Scheduling_Work_and_Resources_Management/",
+      "public_site_url": "https://fabingurung.github.io/jp-scheduling-resources-management/",
       "note": "Owns scheduling/work/resource engine semantics; Construction Knowledge remains distinct from project-specific schedule occurrences as documented in the owning repository.",
       "a7_module_manifest": {
         "path": "A7_MODULE.json",
@@ -77,7 +78,9 @@
         "observed_commit_sha": "2cdc3a900da6cac02d1fd9e5d5ae115937acc024",
         "manifest_role": "ROUTING_ONLY_NON_AUTHORITATIVE_FOR_DOMAIN_FACTS",
         "contract_id": "A7-CONTRACT-MODULE-MANIFEST-001"
-      }
+      },
+      "current_slug": "jp-scheduling-resources-management",
+      "canonical_link_observed_date": "2026-11-17"
     },
     {
       "module_id": "MOD-COST-001",
@@ -88,7 +91,7 @@
       "platform_level": "PEER_SPECIALIST_MODULE",
       "repository_id": "REPO-000008",
       "provider_repository_id": "1312661427",
-      "repository_full_name": "FabinGurung/JP_Cost_Estimation",
+      "repository_full_name": "FabinGurung/jp-estimating-and-boq",
       "default_branch": "main",
       "canonical_working_ref": "research/open-estimation-engine-v0.1",
       "observed_ref_sha": "f93563f79a38374a9ecef8d88f89faaf1ac2d68b",
@@ -103,7 +106,7 @@
         "README.md@research/open-estimation-engine-v0.1"
       ],
       "ownership_profile_id": "OWN-MOD-COST-001",
-      "public_site_url": "https://fabingurung.github.io/JP_Cost_Estimation/",
+      "public_site_url": "https://fabingurung.github.io/jp-estimating-and-boq/",
       "note": "Owns estimation/BOQ/rate/cost logic. Current benchmark structural quantities in this estimator do not make it a structural-design authority.",
       "a7_module_manifest": {
         "path": "A7_MODULE.json",
@@ -112,7 +115,9 @@
         "observed_commit_sha": "4e4b884d8773ab9817777ef264df4d6ccdc3da91",
         "manifest_role": "ROUTING_ONLY_NON_AUTHORITATIVE_FOR_DOMAIN_FACTS",
         "contract_id": "A7-CONTRACT-MODULE-MANIFEST-001"
-      }
+      },
+      "current_slug": "jp-estimating-and-boq",
+      "canonical_link_observed_date": "2026-11-17"
     },
     {
       "module_id": "MOD-STRUCT-001",
@@ -123,7 +128,7 @@
       "platform_level": "PEER_SPECIALIST_MODULE",
       "repository_id": "REPO-000002",
       "provider_repository_id": "843020367",
-      "repository_full_name": "FabinGurung/JP_Structural_Analysis",
+      "repository_full_name": "FabinGurung/jp-structural-analysis",
       "default_branch": "main",
       "canonical_working_ref": "engine/opensees-sar-v0.1",
       "observed_ref_sha": "6819ef299f0ad367198fc8eda1b85f751b9df586",
@@ -139,7 +144,7 @@
         "README.md@engine/opensees-sar-v0.1"
       ],
       "ownership_profile_id": "OWN-MOD-STRUCT-001",
-      "public_site_url": "https://fabingurung.github.io/JP_Structural_Analysis/",
+      "public_site_url": "https://fabingurung.github.io/jp-structural-analysis/",
       "note": "Peer to Operations, Scheduling, Cost and CAD. Owns governed structural-analysis/SAR engine semantics; Operations may link to it but never contains or owns it.",
       "a7_module_manifest": {
         "path": "A7_MODULE.json",
@@ -148,7 +153,9 @@
         "observed_commit_sha": "cc84483447acef7766553743fc40609140abc7a8",
         "manifest_role": "ROUTING_ONLY_NON_AUTHORITATIVE_FOR_DOMAIN_FACTS",
         "contract_id": "A7-CONTRACT-MODULE-MANIFEST-001"
-      }
+      },
+      "current_slug": "jp-structural-analysis",
+      "canonical_link_observed_date": "2026-11-17"
     },
     {
       "module_id": "MOD-CAD-001",
@@ -159,7 +166,7 @@
       "platform_level": "PEER_SPECIALIST_MODULE",
       "repository_id": "REPO-000003",
       "provider_repository_id": "897526094",
-      "repository_full_name": "FabinGurung/JP_Computer-Aided-Drawings",
+      "repository_full_name": "FabinGurung/jp-drawing-coordination",
       "default_branch": "narayani-pages-v0.2",
       "canonical_working_ref": "narayani-pages-v0.2",
       "observed_ref_sha": "8b306c27e77942d9f38adc6ad1b0d1dde2e2ac18",
@@ -177,7 +184,7 @@
         "README.md@narayani-modular-website-v0.3"
       ],
       "ownership_profile_id": "OWN-MOD-CAD-001",
-      "public_site_url": "https://fabingurung.github.io/JP_Computer-Aided-Drawings/",
+      "public_site_url": "https://fabingurung.github.io/jp-drawing-coordination/",
       "note": "Peer to Operations, Scheduling, Cost and Structural. Owns drawing publication/workflows; engineering approval remains provider/project-governed.",
       "a7_module_manifest": {
         "path": "A7_MODULE.json",
@@ -186,7 +193,9 @@
         "observed_commit_sha": "c0f8a61f938b495e01dc360314af477f7d73654c",
         "manifest_role": "ROUTING_ONLY_NON_AUTHORITATIVE_FOR_DOMAIN_FACTS",
         "contract_id": "A7-CONTRACT-MODULE-MANIFEST-001"
-      }
+      },
+      "current_slug": "jp-drawing-coordination",
+      "canonical_link_observed_date": "2026-11-17"
     },
     {
       "module_id": "MOD-RND-001",
@@ -197,7 +206,7 @@
       "platform_level": "PEER_SPECIALIST_MODULE",
       "repository_id": "REPO-000006",
       "provider_repository_id": "1312113873",
-      "repository_full_name": "FabinGurung/JP_Research-and-Development",
+      "repository_full_name": "FabinGurung/jp-research-lab",
       "default_branch": "main",
       "canonical_working_ref": "main",
       "observed_ref_sha": "b8edd20e0d63b30ed5e303825bf6319c81441713",
@@ -213,7 +222,7 @@
         "governance/ADR-001-research-authority-boundaries.md"
       ],
       "ownership_profile_id": "OWN-MOD-RND-001",
-      "public_site_url": "https://fabingurung.github.io/JP_Research-and-Development/",
+      "public_site_url": "https://fabingurung.github.io/jp-research-lab/",
       "note": "Owns public research publication/routing; executable specialist product engines remain in their specialist repositories.",
       "a7_module_manifest": {
         "path": "A7_MODULE.json",
@@ -224,7 +233,9 @@
         "contract_id": "A7-CONTRACT-MODULE-MANIFEST-001",
         "last_reconciliation_id": "MODMAN-REC-000002",
         "last_reconciled_at": "2026-10-07T10:45:03Z"
-      }
+      },
+      "current_slug": "jp-research-lab",
+      "canonical_link_observed_date": "2026-11-17"
     },
     {
       "module_id": "MOD-STUDY-001",
@@ -235,7 +246,7 @@
       "platform_level": "PEER_SPECIALIST_MODULE",
       "repository_id": "REPO-000009",
       "provider_repository_id": "1326596450",
-      "repository_full_name": "FabinGurung/JP_Study_Hub",
+      "repository_full_name": "FabinGurung/jp-study-hub",
       "default_branch": "main",
       "canonical_working_ref": "main",
       "observed_ref_sha": "56da4d10a8b11d49c8b7095c05e34507f3d00e11",
@@ -253,7 +264,7 @@
         "README.md@pages-live"
       ],
       "ownership_profile_id": "OWN-MOD-STUDY-001",
-      "public_site_url": "https://fabingurung.github.io/JP_Study_Hub/",
+      "public_site_url": "https://fabingurung.github.io/jp-study-hub/",
       "note": "Owns study/learning workflows and academic study pages, not production engineering or project operations.",
       "a7_module_manifest": {
         "path": "A7_MODULE.json",
@@ -262,7 +273,9 @@
         "observed_commit_sha": "d89e84524786154174a57dfb95f2918cc875bebd",
         "manifest_role": "ROUTING_ONLY_NON_AUTHORITATIVE_FOR_DOMAIN_FACTS",
         "contract_id": "A7-CONTRACT-MODULE-MANIFEST-001"
-      }
+      },
+      "current_slug": "jp-study-hub",
+      "canonical_link_observed_date": "2026-11-17"
     }
   ]
 }

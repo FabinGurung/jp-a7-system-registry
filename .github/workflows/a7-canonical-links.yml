@@ -1,0 +1,39 @@
+name: A7 Canonical Repository and Pages Link QA
+on:
+  push:
+    branches: [main, 'fix/a7-*']
+    paths:
+      - 'registry/entities/repositories.json'
+      - 'registry/entities/modules.json'
+      - 'registry/providers/canonical-owner-repository-links-20261117.json'
+      - 'scripts/validate_current_repository_links.py'
+      - 'site/index.html'
+      - '.github/workflows/a7-canonical-links.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '23 4 * * 1'
+permissions:
+  contents: read
+jobs:
+  canonical-link-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate 10 provider-owned repository IDs and internal A7 link crosswalk
+        run: python scripts/validate_current_repository_links.py
+      - name: HTTP GET all 10 public GitHub Pages addresses
+        run: python scripts/validate_current_repository_links.py --online --output link-qa-report.json
+      - name: Upload observed public URL results including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: a7-canonical-links-${{ github.run_id }}
+          path: link-qa-report.json
+          if-no-files-found: warn
+          retention-days: 14

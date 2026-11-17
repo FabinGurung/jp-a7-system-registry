@@ -23,21 +23,19 @@ byid={x["id"]:x for x in o["records"]}
 for station in data["stations"]:
  if station["id"] == "REPO-000010":
   e=station["provider_evidence"]
-  assert station["website_url"] is None and e["last_successful_publication"] is None
-  assert e["provider_label"]=="GITHUB_PUBLIC_PAGES_UNVERIFIED" and e["dependency_verified"] is False
+  assert station["website_url"]=="https://fabingurung.github.io/jp-field-desk-library/"
+  assert e["last_successful_publication"]["id"]==43987395477
+  assert e["last_successful_publication"]["result"]=="success"
+  assert e["dependency_verified"] is False
   continue
  x=byid[station["id"]];e=station["provider_evidence"];p=x["deployment"]
- # The provider snapshot is dated 20 Oct; newer canonical slugs must not
- # overwrite its historical observation, only resolve through same-ID aliases.
- current_slug=station["module_repository"].split("/",1)[1]
- previous_aliases={
-  "REPO-000001": ("JP_A7_System_Registry_and_Knowledge_Graph", "jp-a7-system-registry","1406572237"),
-  "REPO-000007": ("JP_Communication-Command-Centre-and-Resource-Hub","jp-site-operations","1312147922"),
- }
- if x["slug"]!=current_slug:
-  allowed=previous_aliases.get(station["id"])
-  assert allowed and x["slug"]==allowed[0] and current_slug==allowed[1] \
-    and str(next(c["provider_object_id"] for c in catalog["repositories"] if c["repository_id"]==station["id"]))==allowed[2]
+ # Historic October record remains unchanged after November provider-verified rename.
+ current=json.loads((R/"registry/providers/canonical-owner-repository-links-20261117.json").read_text())
+ aliases={z["repository_id"]:z for z in current["links"]}
+ canonical=aliases[station["id"]]
+ assert str(canonical["provider_object_id"])==str(next(c["provider_object_id"] for c in catalog["repositories"] if c["repository_id"]==station["id"]))
+ assert x["slug"]==canonical["previous_slug_in_historical_atlas"]
+ assert station["module_repository"]==canonical["repository_full_name"]
  assert len(e["main_sha"])==len(p["sha"])==40
  assert e["last_successful_publication"]["result"]=="success"
  assert e["last_successful_publication"]["id"]==p["id"]

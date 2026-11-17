@@ -99,14 +99,22 @@ if set(provider_ids)!=expected_provider_ids:
     errors.append("current public repository provider-ID set differs from 2026-11-08 source")
 
 new=repo_by.get("REPO-000010")
-if not new or new.get("provider_object_id")!="1448289662" or new.get("public_site_url") is not None:
-    errors.append("Resource Library identity or unverified Pages state drift")
+current=load_json(Path("registry/providers/canonical-owner-repository-links-20261117.json"))
+current_by={x["repository_id"]:x for x in current.get("links",[])}
+if current.get("count")!=10 or len(current_by)!=len(repos):
+    errors.append("Current public GitHub ID/Pages homepage crosswalk incomplete")
+for r in repos:
+    link=current_by.get(r["repository_id"])
+    if not link or str(link["provider_object_id"])!=str(r["provider_object_id"]) or r.get("repository_full_name")!=link["repository_full_name"] or r.get("public_site_url")!=link["homepage"] or not link["has_pages"]:
+        errors.append(f'{r["repository_id"]}: canonical GitHub identity/Pages homepage drift')
+if not new or new.get("provider_object_id")!="1448289662" or new.get("public_site_url")!="https://fabingurung.github.io/jp-field-desk-library/":
+    errors.append("Resource Library live Pages link not reconciled")
 else:
-    page=next((p for p in pages if p.get("repository_id")=="REPO-000010"),None)
-    if not page or page.get("owner_invariant_status")!="NOT_ESTABLISHED" or page.get("latest_successful_run_id") is not None:
-        errors.append("Unverified Resource Library must not claim a deployed Pages release")
-    if any(w.get("repository_id")=="REPO-000010" and w.get("deploy_pages_capable") for w in workflows):
-        errors.append("Migration workflow misclassified as Pages")
+    historical=next((p for p in pages if p.get("repository_id")=="REPO-000010"),None)
+    if not historical or historical.get("owner_invariant_status")!="NOT_ESTABLISHED":
+        errors.append("Dated 6 October Pages observation must remain historical")
+    if new.get("release_evidence_run_id")!=43987395477:
+        errors.append("Resource Library Pages deployment workflow verification missing")
 if errors:
     print("A7 GITHUB INVENTORY VALIDATION: FAIL")
     for e in errors: print("- "+e)

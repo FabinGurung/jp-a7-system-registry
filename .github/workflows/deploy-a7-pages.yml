@@ -89,6 +89,8 @@ jobs:
         run: python scripts/validate_visualizations.py --data-dir site/data
       - name: Generate derived Galactic Atlas directory
         run: python scripts/generate_galactic_atlas.py --output site/data/galactic-atlas.json --commit-sha "$GITHUB_SHA"
+      - name: Validate canonical source-backed GitHub and Pages link registry before uploading
+        run: python scripts/validate_current_repository_links.py
       - name: Validate non-authoritative Galactic Atlas and legacy preservation
         run: |
           python scripts/validate_galactic_atlas.py

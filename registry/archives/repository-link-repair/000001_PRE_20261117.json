@@ -1,0 +1,58 @@
+{
+  "schema": "a7://repository-link-repair-archive/1",
+  "phase": "PRE",
+  "archive_ordinal": "000001",
+  "as_of": "2026-11-17",
+  "base_main_sha": "0770e8fac777967308cbaf12c7024ad2b4f68d9b",
+  "branch": "fix/a7-canonical-repository-links-20261117",
+  "reason": "Reconcile ten provider-ID-stable GitHub repository renames and current Pages homepages; preserve immutable older observations and no private source changes.",
+  "sources": [
+    {
+      "path": "registry/entities/repositories.json",
+      "sha": "66b7941a1ebafb8b57d2275e6a55dde28c44e7fa"
+    },
+    {
+      "path": "registry/entities/modules.json",
+      "sha": "029a9d965ad183e98acc8500771de96cdee4e8c6"
+    },
+    {
+      "path": "registry/authority/repository-role-candidates.json",
+      "sha": "49155a47d1455dc277574f7806c88b58e3907066"
+    },
+    {
+      "path": "registry/decisions/galactic-atlas-ui.v0.1.json",
+      "sha": "d20e4273ed1a13177941ccef807bead90e2fbb59"
+    },
+    {
+      "path": "scripts/generate_galactic_atlas.py",
+      "sha": "a7b02a381ebd98f61f3db2d55c3de37910c55f8e"
+    },
+    {
+      "path": "scripts/validate_galactic_atlas.py",
+      "sha": "c75abc9cd4bd56046fc99f3988e9fd3b34091bdc"
+    },
+    {
+      "path": "scripts/validate_galactic_atlas_arc02.py",
+      "sha": "6f8e783643adc9ed7e0d2eb32f651fba70445bd4"
+    },
+    {
+      "path": "scripts/validate_github_inventory.py",
+      "sha": "3304de116d76992d1010a04bdccb00a39bbc9bd7"
+    },
+    {
+      "path": "site/index.html",
+      "sha": "c08455fbc1a3b398eae172a88e5321bbae8410f6"
+    },
+    {
+      "path": ".github/workflows/deploy-a7-pages.yml",
+      "sha": "cca4fd44ff5daf8b44aab3312cb01b57cc3848ed"
+    },
+    {
+      "path": "scripts/a7_browser_qa.cjs",
+      "sha": "202024a15890286bc6909edabe1f580b1c9f7eba"
+    }
+  ],
+  "independent_http": "NOT_YET_VERIFIED",
+  "source_owner": "A7_CURRENT_REPO",
+  "restore": "Restore original blobs to same canonical paths via governed PR; never use the snapshot as live source"
+}
