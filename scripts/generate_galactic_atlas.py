@@ -11,6 +11,7 @@ CATALOGUE = ROOT / "registry/entities/repositories.json"
 LAYOUT = ROOT / "registry/decisions/galactic-atlas-ui.v0.1.json"
 PROVIDER = ROOT / "registry/providers/galactic-atlas-arc02-observation-20261020.json"
 PUBLIC_INVENTORY = ROOT / "registry/providers/galactic-atlas-public-repository-inventory-20261108.json"
+CURRENT_LINKS = ROOT / "registry/providers/canonical-owner-repository-links-20261117.json"
 SECTORS = ROOT / "registry/decisions/galactic-atlas-sectors.v0.1.json"
 ARC04 = ROOT / "registry/decisions/galactic-atlas-arc04-routes.v0.1.json"
 MODULES = ROOT / "registry/entities/modules.json"
@@ -41,6 +42,11 @@ def build():
     provider = json.loads(PROVIDER.read_text(encoding="utf-8"))
     assert provider["status"] == "DATED_SNAPSHOT_NOT_LIVE_MONITOR"
     evidence = {item["id"]: item for item in provider["records"]}
+    current_links = json.loads(CURRENT_LINKS.read_text(encoding="utf-8"))
+    current_by_id = {x["repository_id"]: x for x in current_links["links"]}
+    assert current_links["count"] == len(current_by_id) == len(source) == 10
+    assert set(current_by_id) == set(source) and current_links["observed_date"] == "2026-11-17"
+    assert all(str(source[k]["provider_object_id"]) == str(x["provider_object_id"]) and source[k]["repository_full_name"] == x["repository_full_name"] and source[k]["public_site_url"] == x["homepage"] and x["has_pages"] for k,x in current_by_id.items())
     inventory = json.loads(PUBLIC_INVENTORY.read_text(encoding="utf-8"))
     assert inventory["count"] == len(source) == 10 and inventory["observed_date"] == "2026-11-08"
     assert {r["provider_object_id"] for r in inventory["observed_repositories"]} == {r["provider_object_id"] for r in source.values()}
@@ -58,20 +64,15 @@ def build():
             # This dated provider snapshot records an earlier slug. A later
             # confirmed GitHub rename may change the current slug, but must not
             # rewrite that historical observation or its stable provider ID.
-            historical_renames = {
-                "REPO-000001": ("JP_A7_System_Registry_and_Knowledge_Graph", "jp-a7-system-registry", "1406572237"),
-                "REPO-000007": ("JP_Communication-Command-Centre-and-Resource-Hub", "jp-site-operations", "1312147922"),
-            }
             if entry["current_slug"] != item["slug"]:
-                allowed = historical_renames.get(ident)
-                assert allowed and item["slug"] == allowed[0] and entry["current_slug"] == allowed[1] \
-                    and str(entry["provider_object_id"]) == allowed[2], "Historical provider snapshot identity mismatch"
+                canonical = current_by_id[ident]
+                assert item["slug"] == canonical["previous_slug_in_historical_atlas"] and entry["current_slug"] == canonical["current_slug"] and str(entry["provider_object_id"]) == str(canonical["provider_object_id"]), "Historical provider snapshot identity mismatch"
             assert len(item["main_sha"]) == 40 and item["deployment"]["id"] > 0
             assert item["deployment"]["branch"] == item["production_branch"]
         else:
             assert ident == inventory["new_repository"]["repository_id"]
             assert entry["provider_object_id"] == inventory["new_repository"]["provider_object_id"]
-            assert entry["public_site_url"] is None, "Never fabricate a Pages URL"
+            assert entry["public_site_url"] == current_by_id[ident]["homepage"], "Pages homepage must match current GitHub provider"
         name = entry["repository_full_name"]
         assert name.startswith("FabinGurung/"), "Untrusted owner"
         site = entry.get("public_site_url")
@@ -107,18 +108,20 @@ def build():
         else:
             new = inventory["new_repository"]
             assert len(new["observed_main_sha"]) == 40 and new["pages_status"] == "UNVERIFIED"
+            published = current_links["live_published_evidence"]
+            assert published["repository_id"] == ident and published["deploy"] == "success" and published["branch"] == "main"
             record = {
-                "observation_id": inventory["observation_id"],
-                "observed_date": inventory["observed_date"],
+                "observation_id": current_links["observation_id"],
+                "observed_date": current_links["observed_date"],
                 "not_live": True,
-                "provider_label": "GITHUB_PUBLIC_PAGES_UNVERIFIED",
-                "main_sha": new["observed_main_sha"],
-                "publication_branch": "UNVERIFIED",
-                "last_successful_publication": None,
+                "provider_label": "PAGES_DEPLOY_SUCCESS_NOT_DOMAIN_APPROVAL",
+                "main_sha": published["commit_sha"],
+                "publication_branch": published["branch"],
+                "last_successful_publication": {"id": published["run_id"], "sha": published["commit_sha"], "branch": published["branch"], "at": published["completed_at"], "result": "success"},
                 "related_workflow": new["verified_workflow"],
-                "capability": "Human-first resource portal; Git history migration safety QA",
-                "owner_gate": "Pages, A7_MODULE.json, owner acceptance and historical import completion are not verified.",
-                "dependency_note": "Catalogue navigation only; no approved runtime or source handoff to Operations.",
+                "capability": "Human-first source-backed resource library with Pages publisher",
+                "owner_gate": "Pages deployment verified; A7_MODULE.json and owner/domain engineering approvals remain separately gated.",
+                "dependency_note": "Catalogue navigation only; no approved runtime/private-source handoff to Operations.",
                 "dependency_verified": False
             }
         stations.append({
@@ -130,7 +133,7 @@ def build():
             "does_not_own": shape.get("does_not_own"),
             "module_repository": name, "github_url": url, "website_url": site,
             "source_status_observation": entry.get("deployment_status"),
-            "source_observed_at": entry.get("last_verified_at") or (inventory["observed_date"] if ident in new_ids else None),
+            "source_observed_at": current_links["observed_date"],
             "deep_links": deep,
             "provider_evidence": record
         })
@@ -274,7 +277,7 @@ def build():
         "relationship_arc": "GALACTIC_ATLAS_ARC_04_EVIDENCE_GATED_ROUTES",
         "history_arc": "GALACTIC_ATLAS_ARC_05_IMMUTABLE_RELEASE_HISTORY",
         "sector_taxonomy_presentation_only": True, "non_authoritative": True,
-        "provider_observation_date": provider["observed_date"],
+        "provider_observation_date": provider["observed_date"], "current_repository_observation_date": current_links["observed_date"],
         "provider_snapshot_not_live": True,
         "catalogue_role": ui["ownership_rule"],
         "fact_scope_note": ui["fact_scope_note"],
@@ -283,6 +286,7 @@ def build():
             "registry/decisions/galactic-atlas-ui.v0.1.json": digest(LAYOUT),
             "registry/providers/galactic-atlas-arc02-observation-20261020.json": digest(PROVIDER),
             "registry/providers/galactic-atlas-public-repository-inventory-20261108.json": digest(PUBLIC_INVENTORY),
+            "registry/providers/canonical-owner-repository-links-20261117.json": digest(CURRENT_LINKS),
             "registry/decisions/galactic-atlas-sectors.v0.1.json": digest(SECTORS),
             "registry/decisions/galactic-atlas-arc04-routes.v0.1.json": digest(ARC04),
             "registry/entities/modules.json": digest(MODULES),
