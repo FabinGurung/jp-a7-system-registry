@@ -13,11 +13,12 @@
   "source_pull_request_url": "https://github.com/FabinGurung/jp-research-lab/pull/255",
   "source_branch": "feat/jp-enterprise-damauli-wedding-proposal-20261118",
   "source_directory": "templates/enterprise/projects/damauli-wedding-proposal/",
-  "website_proposed_url": "https://fabingurung.github.io/JP_Research-and-Development/enterprise-documents/wedding-damauli/",
-  "website_status": "R&D source merged to main, GitHub Pages public route awaiting provider/live-site verification",
-  "reader_route": "https://fabingurung.github.io/JP_Research-and-Development/enterprise-documents/",
+  "website_proposed_url": "https://fabingurung.github.io/jp-research-lab/enterprise-documents/wedding-damauli/",
+  "website_status": "Corrected from historical repository slug to current jp-research-lab. Source committed, Pages live readback still unverified; enabling GitHub Pages may require repository administrator.",
+  "reader_route": "https://fabingurung.github.io/jp-research-lab/enterprise-documents/",
   "google_drive_private_pointer": "intentionally not mirrored into public A7 source; consult owning JP Enterprise project folder",
   "history_policy": "Retain same LIVE Google Doc ID, native revisions, immutable Git commits, separate PDF release snapshots; update public links only after deployment readback.",
-  "source_merged_commit": "3822eb93197d0f753311d99fb8c598ac194d48c1",
-  "source_pull_request_state": "MERGED"
+  "source_merged_commit": "33d1ad9a18c00c31cdd0593925d72bbdd3126f45",
+  "source_pull_request_state": "MERGED (#259 correction)",
+  "last_observed_on": "2026-11-19"
 }
