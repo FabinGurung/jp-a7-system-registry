@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "record_id": "A7-EXT-JPENT-WEDDING-DAMAULI-20261118",
+  "entity_type": "external_project_artifact_pointer",
+  "display_title": "JP Enterprise — Damauli Wedding Ceremony and Reception Proposal",
+  "owner_organization": "JP Enterprise",
+  "owner_repo": "FabinGurung/jp-research-lab",
+  "owning_family": "Enterprise Documents",
+  "authority_rule": "Google Drive native document remains authoritative; R&D contains manually published public-safe derivative; A7 links only and never imports private source content.",
+  "public_safe": true,
+  "recorded_on": "2026-11-18",
+  "source_repository_url": "https://github.com/FabinGurung/jp-research-lab",
+  "source_pull_request_url": "https://github.com/FabinGurung/jp-research-lab/pull/255",
+  "source_branch": "feat/jp-enterprise-damauli-wedding-proposal-20261118",
+  "source_directory": "templates/enterprise/projects/damauli-wedding-proposal/",
+  "website_proposed_url": "https://fabingurung.github.io/JP_Research-and-Development/enterprise-documents/wedding-damauli/",
+  "website_status": "publication pending GitHub PR merge and Pages QA",
+  "reader_route": "https://fabingurung.github.io/JP_Research-and-Development/enterprise-documents/",
+  "google_drive_private_pointer": "intentionally not mirrored into public A7 source; consult owning JP Enterprise project folder",
+  "history_policy": "Retain same LIVE Google Doc ID, native revisions, immutable Git commits, separate PDF release snapshots; update public links only after deployment readback."
+}
