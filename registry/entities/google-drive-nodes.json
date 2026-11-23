@@ -88,7 +88,7 @@
     {
       "entity_id": "GDRIVE-TOP-000006",
       "entity_type": "google_drive_folder",
-      "canonical_label": "05_AEC_Knowledge",
+      "canonical_label": "05 AEC Knowledge",
       "semantic_role": "AEC_KNOWLEDGE_CONTAINER",
       "provider": "google_drive",
       "provider_object_id": "1Ikx2IGPTjailf1EhALQZPqMMkf3yj2q8",
@@ -102,7 +102,7 @@
     {
       "entity_id": "GDRIVE-TOP-000007",
       "entity_type": "google_drive_folder",
-      "canonical_label": "06_Silver_Hook",
+      "canonical_label": "06 Silver Hook",
       "semantic_role": "SILVER_HOOK_CONTAINER",
       "provider": "google_drive",
       "provider_object_id": "19a30M1PmNoORc62ZrXjHd46Yc9csRL6a",
@@ -158,7 +158,7 @@
     {
       "entity_id": "GDRIVE-TOP-000011",
       "entity_type": "google_drive_folder",
-      "canonical_label": "10_Software",
+      "canonical_label": "10 Software",
       "semantic_role": "SOFTWARE_SYSTEMS_CONTAINER",
       "provider": "google_drive",
       "provider_object_id": "1eNEMKxGTI8nwmhhhwgt41B6CSLhbGiJi",
@@ -172,7 +172,7 @@
     {
       "entity_id": "GDRIVE-TOP-000012",
       "entity_type": "google_drive_folder",
-      "canonical_label": "11_AI_CHAT_WORKSPACES_AND_DURABLE_RECORDS",
+      "canonical_label": "11 AI Chat Workspaces and Durable Records",
       "semantic_role": "AI_WORKSPACE_DURABLE_RECORDS",
       "provider": "google_drive",
       "provider_object_id": "1kYbvBPM3N9mL-pBrjQzISq0GNezOVh7N",
