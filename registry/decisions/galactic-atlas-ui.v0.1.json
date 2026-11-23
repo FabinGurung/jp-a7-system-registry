@@ -8,7 +8,7 @@
   "systems": [
     {
       "id": "REPO-000001",
-      "label": "A7 · Galactic Atlas",
+      "label": "A7 System Registry",
       "short": "A7",
       "role": "CENTRAL_CATALOGUE",
       "zone": "HUB",
@@ -31,8 +31,8 @@
     },
     {
       "id": "REPO-000003",
-      "label": "AAD / CAD",
-      "short": "AAD",
+      "label": "Drawing Coordination",
+      "short": "CAD",
       "role": "DRAWING_ENGINE",
       "zone": "ENGINEERING",
       "azimuth": 221,
@@ -56,7 +56,7 @@
     },
     {
       "id": "REPO-000004",
-      "label": "Scheduling",
+      "label": "Scheduling & Resources",
       "short": "4D",
       "role": "SCHEDULE_ENGINE",
       "zone": "ENGINEERING",
@@ -67,18 +67,18 @@
     },
     {
       "id": "REPO-000005",
-      "label": "Pilates Studio",
-      "short": "STUDIO",
-      "role": "INDEPENDENT_BUSINESS",
+      "label": "Repository Sandbox",
+      "short": "TEST",
+      "role": "PUBLIC_TEST_SANDBOX",
       "zone": "ADJACENT",
       "azimuth": 345,
       "radial": 48,
-      "summary": "Pilates Studio website prototype retained under the renamed data-warehouse-random GitHub repository (provider ID 1309466765). The slug is not a separate business identity.",
-      "owns": "Historical Pilates prototype website/code, as shown by the repository's files and description"
+      "summary": "The data-warehouse-random repository hosts a historical Pilates prototype and now a separately scoped 01_JP Drive explorer test. Its GitHub slug is not a new business or data authority.",
+      "owns": "Repository-local historical prototype and public-safe source explorer test; private source files remain in Google Drive"
     },
     {
       "id": "REPO-000006",
-      "label": "R&D",
+      "label": "Research Lab",
       "short": "R&D",
       "role": "KNOWLEDGE_ENGINE",
       "zone": "KNOWLEDGE",
@@ -89,7 +89,7 @@
     },
     {
       "id": "REPO-000007",
-      "label": "Operations Hub",
+      "label": "Site Operations",
       "short": "OPS",
       "role": "FIELD_EVIDENCE",
       "zone": "ENGINEERING",
@@ -100,8 +100,8 @@
     },
     {
       "id": "REPO-000008",
-      "label": "Cost Estimation",
-      "short": "5D",
+      "label": "Estimating & BOQ",
+      "short": "BOQ",
       "role": "COST_ENGINE",
       "zone": "ENGINEERING",
       "azimuth": 258,
@@ -122,7 +122,7 @@
     },
     {
       "id": "REPO-000010",
-      "label": "Field & Desk Resource Library",
+      "label": "Field & Desk Library",
       "short": "LIB",
       "role": "RESOURCE_LIBRARY",
       "zone": "OPERATIONS",
