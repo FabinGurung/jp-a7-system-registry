@@ -175,6 +175,8 @@ jobs:
       - name: Verify published static site has six clickable TOC links and generated JSON
         run: |
           python scripts/validate_memory_wall_published_site.py --site-root site --data-dir site/data --commit-sha "$GITHUB_SHA"
+      - name: Install the registered Google Drive source gallery
+        run: python3 .github/source-gallery/install.py site jp-a7-system-registry
       - name: Disable Jekyll
         run: touch site/.nojekyll
       - name: Configure Pages
