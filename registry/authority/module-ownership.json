@@ -29,7 +29,7 @@
         "research_publication_fact",
         "study_learning_fact"
       ],
-      "boundary_rule": "Operations may surface, summarize and link peer specialist-module outputs, but those links/projections do not transfer engineering authority."
+      "boundary_rule": "Operations may surface, summarize and link peer specialist-module outputs, but those links/projections do not transfer engineering authority. Owner-approved 24 November 2026: manual site intake, daily progress and readiness, reviewed operational instructions and project working-source routing belong to Operations; financial/payment, wages, attendance, Money & Goods, BBS and quantity measurement remain Estimation. Company/project links do not duplicate authoritative source records."
     },
     {
       "ownership_profile_id": "OWN-MOD-SCHED-001",
@@ -75,7 +75,7 @@
         "structural_analysis_fact",
         "cad_drawing_fact"
       ],
-      "boundary_rule": "Cost owns estimation/cost logic; benchmark structural quantities are estimation inputs and do not confer structural-design authority."
+      "boundary_rule": "Cost owns estimation/cost logic; benchmark structural quantities are estimation inputs and do not confer structural-design authority. Owner-approved 24 November 2026: retains payment and vendor/contractor registers, wages, attendance, worker Money & Goods, BBS and quantity measurement; site intake, daily progress and readiness belong to Operations."
     },
     {
       "ownership_profile_id": "OWN-MOD-STRUCT-001",
