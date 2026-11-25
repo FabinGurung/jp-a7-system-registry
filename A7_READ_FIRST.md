@@ -238,3 +238,7 @@ For A7 task edits, read `docs/JP_A7_VERSION_CONTROL_READ_FIRST.md`, the original
 ## 31. Current A7 operator view — A7-SEQ-000041
 
 The already-existing `site/how-it-works.html` combines the historical CAD/AAD example with the new, separate A7 operator section `#a7-operator-quickstart`. This *presentation* is derived operating guidance: `A7_READ_FIRST.md` and `docs/JP_A7_VERSION_CONTROL_READ_FIRST.md` remain the canonical procedures. Follow source ownership, exact original evidence, same-live-ID PRE, owner-only editing, distinctions between commit/CI/Pages/approval, validated POST and explicit HOLD. Never claim prior specialist acceptance from the presentation. Roadmap and guide are captured in separate numbered subject archives. Public Pages are not a private data warehouse.
+
+## Structural Analysis — permanent Sheets-first control (25 November 2026)
+
+For JP Structural Analysis, read [A7-MEM-SAR-SHEETS-FIRST-001](registry/curations/platform-responsibilities.v0.1.json) (field `structural_sheets_first`) and the [Memory Wall poster](site/memory-wall.html#structural-sheets-first). Drive preserves originals and PRE/POST versions; Sheets owns parameters, formulas and results; Docs owns theory and exact Python source blocks; AI reads and externally executes validated solvers and writes back; GitHub owns frontend/publication assets, Actions validates/builds/deploys, Pages presents. No canonical structural solver in GitHub, no automatic refresh, no engineering approval from CI. Other specialist authority contracts are unchanged.

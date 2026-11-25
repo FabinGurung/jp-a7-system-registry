@@ -71,7 +71,7 @@
   ],
   "principle": "Git records the change → Actions tests explicit rules → Drive retains original evidence → a database manages live application state when required.",
   "example": "An IFC parser passing means the file parsed; it does not approve the structural design.",
-  "actions_hint": "Actions can also run geometry inspection, Python engineering calculations, spreadsheet validation, quantity takeoffs, reproducibility manifests and report assembly—only after the scripts and evidence checks are implemented.",
+  "actions_hint": "Actions can also run geometry inspection, Python engineering calculations, spreadsheet validation, quantity takeoffs, reproducibility manifests and report assembly—only after the scripts and evidence checks are implemented. For JP Structural Analysis, apply the Sheets-first specialist rule below instead of moving the primary solver into Actions.",
   "suggested_workflows": [
     "Python engineering runs",
     "Spreadsheet lint + QC",
@@ -156,5 +156,49 @@
     "deployment_status": "DESIGN_PRINCIPLE_NOT_GLOBAL_INTEGRATION"
   },
   "non_authoritative_operating_guidance": true,
-  "source_notes": "A7 reference/curation only. Specific fact class, module and original provider decide authority; no cross-system migration or automation asserted."
+  "source_notes": "A7 reference/curation only. Specific fact class, module and original provider decide authority; no cross-system migration or automation asserted.",
+  "structural_sheets_first": {
+    "id": "A7-MEM-SAR-SHEETS-FIRST-001",
+    "title": "Structural analysis: Sheets first, AI executes, GitHub presents",
+    "scope": "JP Structural Analysis specialist operating rule; other modules retain their own fact-class authority.",
+    "confirmed_on": "2026-11-25",
+    "roles": [
+      [
+        "Google Drive",
+        "Preserve original evidence, permissions, solver packages, PRE/POST archives and permanent native IDs."
+      ],
+      [
+        "Google Sheets",
+        "Own parameters, units, formulas where practical, calculation results, numerical QA and approved result tables."
+      ],
+      [
+        "Google Docs",
+        "Own engineering theory, assumptions, decisions, verification and exact versioned Python source blocks; preserve dependencies and execution instructions."
+      ],
+      [
+        "AI / external Python runtime",
+        "Read live sources, reconcile provenance, execute advanced FEM or nonlinear solvers externally, test, and append validated results to native Sheets. AI is operator, not authority."
+      ],
+      [
+        "GitHub repository",
+        "Own public-safe frontend, publication snapshots, schema and validation/build logic only; do not reintroduce structural solver as canonical Git code."
+      ],
+      [
+        "GitHub Actions",
+        "Validate schemas, privacy, source/output parity, build and deploy approved snapshots. Do not use as the primary structural calculation engine."
+      ],
+      [
+        "GitHub Pages",
+        "Present approved summaries, tables, plots and interactive models; never source authority or engineering sign-off."
+      ]
+    ],
+    "guardrails": [
+      "Preserve native source IDs and earlier sheets; append new calculation tabs and versioned code blocks, never overwrite originals to fit an importer.",
+      "Manual user-initiated refresh and release only; no scheduled ingestion or automated engineering approval.",
+      "Record source revisions, units, assumptions, solver version/dependencies, execution, benchmark and convergence evidence, and PRE/POST rollback lineage.",
+      "Missing or conflicting inputs remain explicit HOLD; software QA is not a construction, procurement or engineering approval.",
+      "Public Git and Pages must exclude private Drive identifiers, evidence, secrets and restricted project data.",
+      "A7 routes to the structural owner; it does not acquire engineering calculation or source ownership."
+    ]
+  }
 }
