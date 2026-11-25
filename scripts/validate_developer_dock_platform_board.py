@@ -40,3 +40,17 @@ assert 'memory-wall.html#platform-role-board' in html
 assert "data/a7-developer-dock.json" in (R/"site/assets/a7-developer-dock.js").read_text()
 assert "data/platform-responsibilities.json" in (R/"site/assets/platform-responsibilities.js").read_text()
 print("A7 DEVELOPER DOCK + PLATFORM MEMORY MATRIX PASS groups=5 original_repo_only=1 rows=8")
+
+# Structural specialist poster is public-safe and matches its machine-readable source.
+from html import escape
+sar=p["structural_sheets_first"]
+assert sar["id"]=="A7-MEM-SAR-SHEETS-FIRST-001"
+assert len(sar["roles"])==7 and len(sar["guardrails"])==6
+assert memory.count('id="structural-sheets-first"')==1
+assert escape(sar["title"],quote=False) in memory
+for role, responsibility in sar["roles"]:
+    assert escape(role,quote=False) in memory and escape(responsibility,quote=False) in memory
+for rule in sar["guardrails"]:
+    assert escape(rule,quote=False) in memory
+assert "drive.google.com" not in json.dumps(sar) and "docs.google.com" not in json.dumps(sar)
+print("A7 STRUCTURAL SHEETS-FIRST POSTER PASS")
