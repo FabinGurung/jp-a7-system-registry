@@ -45,7 +45,7 @@ print("A7 DEVELOPER DOCK + PLATFORM MEMORY MATRIX PASS groups=5 original_repo_on
 from html import escape
 sar=p["structural_sheets_first"]
 assert sar["id"]=="A7-MEM-SAR-SHEETS-FIRST-001"
-assert len(sar["roles"])==7 and len(sar["guardrails"])==6
+assert len(sar["roles"])==7 and len(sar["guardrails"])==8
 assert memory.count('id="structural-sheets-first"')==1
 assert escape(sar["title"],quote=False) in memory
 for role, responsibility in sar["roles"]:
@@ -53,4 +53,9 @@ for role, responsibility in sar["roles"]:
 for rule in sar["guardrails"]:
     assert escape(rule,quote=False) in memory
 assert "drive.google.com" not in json.dumps(sar) and "docs.google.com" not in json.dumps(sar)
-print("A7 STRUCTURAL SHEETS-FIRST POSTER PASS")
+assert sar["confirmed_on"]=="2026-11-28"
+assert "At every resumption" in sar["roles"][3][1]
+assert "never source the engineering engine from GitHub" in sar["roles"][4][1]
+assert "Never execute authoritative structural engineering calculations" in sar["roles"][5][1]
+assert "concurrent governing combination tuples" in sar["guardrails"][6]
+print("A7 STRUCTURAL DRIVE-FIRST POSTER PASS")

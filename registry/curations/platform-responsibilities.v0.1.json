@@ -71,7 +71,7 @@
   ],
   "principle": "Git records the change → Actions tests explicit rules → Drive retains original evidence → a database manages live application state when required.",
   "example": "An IFC parser passing means the file parsed; it does not approve the structural design.",
-  "actions_hint": "Actions can also run geometry inspection, Python engineering calculations, spreadsheet validation, quantity takeoffs, reproducibility manifests and report assembly—only after the scripts and evidence checks are implemented. For JP Structural Analysis, apply the Sheets-first specialist rule below instead of moving the primary solver into Actions.",
+  "actions_hint": "Actions can run reproducible jobs for other authorized modules; for JP Structural Analysis the specialist rule below is absolute: engineering code is retrieved only from project Drive sources and executed outside GitHub; Actions validate and deploy reviewed publication snapshots only.",
   "suggested_workflows": [
     "Python engineering runs",
     "Spreadsheet lint + QC",
@@ -159,37 +159,37 @@
   "source_notes": "A7 reference/curation only. Specific fact class, module and original provider decide authority; no cross-system migration or automation asserted.",
   "structural_sheets_first": {
     "id": "A7-MEM-SAR-SHEETS-FIRST-001",
-    "title": "Structural analysis: Sheets first, AI executes, GitHub presents",
+    "title": "Structural analysis: Drive-first engineering, AI executes, GitHub presents",
     "scope": "JP Structural Analysis specialist operating rule; other modules retain their own fact-class authority.",
-    "confirmed_on": "2026-11-25",
+    "confirmed_on": "2026-11-28",
     "roles": [
       [
         "Google Drive",
-        "Preserve original evidence, permissions, solver packages, PRE/POST archives and permanent native IDs."
+        "Each project owns its Drive folder, original evidence, permissions, native source IDs, exact executable archives and PRE/POST revisions."
       ],
       [
         "Google Sheets",
-        "Own parameters, units, formulas where practical, calculation results, numerical QA and approved result tables."
+        "Each project owns native inputs, units, formulas where practical, calculation results, numerical QA and signed-action station tables; shared module QA is linked evidence."
       ],
       [
         "Google Docs",
-        "Own engineering theory, assumptions, decisions, verification and exact versioned Python source blocks; preserve dependencies and execution instructions."
+        "Each project owns readable complete executable source in the appropriate programming languages, theory, assumptions, decisions, dependencies, versions, commands and output schema."
       ],
       [
-        "AI / external Python runtime",
-        "Read live sources, reconcile provenance, execute advanced FEM or nonlinear solvers externally, test, and append validated results to native Sheets. AI is operator, not authority."
+        "AI / external numerical runtime",
+        "At every resumption read current project Docs and Sheets first; retrieve code only from authoritative Drive sources, execute externally, verify and save source, results and drawings back to the owning project. AI is operator, not authority."
       ],
       [
         "GitHub repository",
-        "Own public-safe frontend, publication snapshots, schema and validation/build logic only; do not reintroduce structural solver as canonical Git code."
+        "Frontend, reviewed public-safe result snapshots, schemas and publication validation/build logic only; never source the engineering engine from GitHub, including historical code."
       ],
       [
         "GitHub Actions",
-        "Validate schemas, privacy, source/output parity, build and deploy approved snapshots. Do not use as the primary structural calculation engine."
+        "Validate publication schemas, privacy, parity, links and bytes; build and deploy reviewed snapshots only. Never execute authoritative structural engineering calculations."
       ],
       [
         "GitHub Pages",
-        "Present approved summaries, tables, plots and interactive models; never source authority or engineering sign-off."
+        "Display reviewed summaries, force diagrams, tables, plots and interactive models only; never source the engineering engine or confer engineering sign-off."
       ]
     ],
     "guardrails": [
@@ -198,7 +198,9 @@
       "Record source revisions, units, assumptions, solver version/dependencies, execution, benchmark and convergence evidence, and PRE/POST rollback lineage.",
       "Missing or conflicting inputs remain explicit HOLD; software QA is not a construction, procurement or engineering approval.",
       "Public Git and Pages must exclude private Drive identifiers, evidence, secrets and restricted project data.",
-      "A7 routes to the structural owner; it does not acquire engineering calculation or source ownership."
+      "A7 routes to the structural owner; it does not acquire engineering calculation or source ownership.",
+      "Every beam and column requires signed N, Vy, Vz, T, My and Mz station diagrams, six-component joint/support reactions, local axes, loads, eccentricities, exact critical stations and concurrent governing combination tuples linked to section and reinforcement design checks.",
+      "Generate drawings from verified station tables; retain failed checks and load-combination lineage. Never merge independent component maxima into a fictitious concurrent demand or release unreviewed reinforcement for construction."
     ]
   }
 }
